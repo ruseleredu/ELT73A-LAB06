@@ -1,0 +1,489 @@
+[
+    {
+        "id": "1ac7873da59a4fed",
+        "type": "tab",
+        "label": "Basic_Flow",
+        "disabled": false,
+        "info": "# Basic flow to start with STM32CubeMonitor."
+    },
+    {
+        "id": "cdfabfa0a1de1bf0",
+        "type": "ui_chartst",
+        "z": "1ac7873da59a4fed",
+        "group": "f9c34dde.1e2f4",
+        "name": "myChart",
+        "order": 4,
+        "width": 15,
+        "height": 9,
+        "chartType": "line",
+        "curveType": "linear",
+        "duration": "10",
+        "ymin": "",
+        "ymax": "",
+        "x": 580,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "dcfb5d4b03547d09",
+        "type": "acquisition out",
+        "z": "1ac7873da59a4fed",
+        "name": "myProbe_Out",
+        "probeconfig": "343d55e47c42eb61",
+        "x": 840,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "e07c4a9471738e3d",
+        "type": "acquisition in",
+        "z": "1ac7873da59a4fed",
+        "name": "myProbe_In",
+        "probeconfig": "844c546a938155de",
+        "x": 130,
+        "y": 280,
+        "wires": [
+            [
+                "581c07bf2b6b3094"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "bb4d0f8f000bc29d",
+        "type": "variables",
+        "z": "1ac7873da59a4fed",
+        "groupname": "myVariables",
+        "accesspoint": 0,
+        "execonfig": "691c2b5040b7f848",
+        "variablelist": [],
+        "triggerstartmode": "manual",
+        "triggername": "BLUELED",
+        "triggerthreshold": "30000",
+        "frequency": "",
+        "frequencyType": "0",
+        "snapshotheader": "",
+        "mode": "direct",
+        "lastImportedTime": 1732583269609,
+        "openStatus": true,
+        "x": 330,
+        "y": 120,
+        "wires": [
+            [
+                "dcfb5d4b03547d09",
+                "6937eb0bc2e80a4d"
+            ],
+            [
+                "9267c8b841ea55fe"
+            ]
+        ]
+    },
+    {
+        "id": "8e09a8df0d5c7a25",
+        "type": "ui_button",
+        "z": "1ac7873da59a4fed",
+        "name": "",
+        "group": "f9c34dde.1e2f4",
+        "order": 3,
+        "width": 5,
+        "height": 1,
+        "passthru": false,
+        "label": "Clear Graphs",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "clear",
+        "x": 430,
+        "y": 380,
+        "wires": [
+            [
+                "cdfabfa0a1de1bf0"
+            ]
+        ]
+    },
+    {
+        "id": "2a03e2b5549fd1c5",
+        "type": "ui_button",
+        "z": "1ac7873da59a4fed",
+        "name": "",
+        "group": "f9c34dde.1e2f4",
+        "order": 1,
+        "width": 5,
+        "height": 1,
+        "passthru": false,
+        "label": "START Acquisition",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "start",
+        "x": 110,
+        "y": 80,
+        "wires": [
+            [
+                "bb4d0f8f000bc29d"
+            ]
+        ]
+    },
+    {
+        "id": "756199d184f326e8",
+        "type": "ui_button",
+        "z": "1ac7873da59a4fed",
+        "name": "",
+        "group": "f9c34dde.1e2f4",
+        "order": 2,
+        "width": 5,
+        "height": 1,
+        "passthru": true,
+        "label": "STOP Acquisition",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "stop",
+        "x": 110,
+        "y": 160,
+        "wires": [
+            [
+                "bb4d0f8f000bc29d"
+            ]
+        ]
+    },
+    {
+        "id": "581c07bf2b6b3094",
+        "type": "processing",
+        "z": "1ac7873da59a4fed",
+        "groupname": "myVariables",
+        "groupid": "d59587ff.cd1748",
+        "expressions": [],
+        "statistics": [],
+        "logmode": "no",
+        "x": 390,
+        "y": 280,
+        "wires": [
+            [
+                "cdfabfa0a1de1bf0"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "9267c8b841ea55fe",
+        "type": "ui_toast",
+        "z": "1ac7873da59a4fed",
+        "position": "top right",
+        "displayTime": "3",
+        "highlight": "",
+        "sendall": true,
+        "outputs": 0,
+        "ok": "OK",
+        "cancel": "",
+        "raw": false,
+        "topic": "",
+        "name": "",
+        "x": 530,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "6937eb0bc2e80a4d",
+        "type": "ui_write",
+        "z": "1ac7873da59a4fed",
+        "group": "f9c34dde.1e2f4",
+        "name": "",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "x": 530,
+        "y": 40,
+        "wires": [
+            [
+                "dcfb5d4b03547d09",
+                "37715cdc33c2740c"
+            ]
+        ]
+    },
+    {
+        "id": "c76439c3ec1b8053",
+        "type": "inject",
+        "z": "1ac7873da59a4fed",
+        "name": "OFF",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "0",
+        "payloadType": "num",
+        "x": 90,
+        "y": 500,
+        "wires": [
+            [
+                "a28049ab50b6e3f2"
+            ]
+        ]
+    },
+    {
+        "id": "146f24e492c7acb0",
+        "type": "inject",
+        "z": "1ac7873da59a4fed",
+        "name": "ON",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "1",
+        "payloadType": "num",
+        "x": 90,
+        "y": 540,
+        "wires": [
+            [
+                "a28049ab50b6e3f2"
+            ]
+        ]
+    },
+    {
+        "id": "40fb3bf575340404",
+        "type": "debug",
+        "z": "1ac7873da59a4fed",
+        "name": "debug 2",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 740,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "37715cdc33c2740c",
+        "type": "debug",
+        "z": "1ac7873da59a4fed",
+        "name": "debug 3",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 740,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "a28049ab50b6e3f2",
+        "type": "template",
+        "z": "1ac7873da59a4fed",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "json",
+        "syntax": "mustache",
+        "template": "{\n   \"variablelist\":[\n      {\n         \"address\":\"0x20000028\",\n         \"type\":1,\n         \"value\":\"{{payload}}\"\n      }\n   ],\n   \"accesspoint\":0\n}",
+        "output": "json",
+        "x": 300,
+        "y": 520,
+        "wires": [
+            [
+                "e1139e7b55a2074b"
+            ]
+        ]
+    },
+    {
+        "id": "e1139e7b55a2074b",
+        "type": "change",
+        "z": "1ac7873da59a4fed",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "write",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 480,
+        "y": 520,
+        "wires": [
+            [
+                "40fb3bf575340404",
+                "dcfb5d4b03547d09"
+            ]
+        ]
+    },
+    {
+        "id": "180f1423b8831720",
+        "type": "mqtt in",
+        "z": "1ac7873da59a4fed",
+        "name": "",
+        "topic": "adriano",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "2b8504b256515eae",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 84.19999694824219,
+        "y": 415.1999816894531,
+        "wires": [
+            [
+                "a28049ab50b6e3f2"
+            ]
+        ]
+    },
+    {
+        "id": "f9c34dde.1e2f4",
+        "type": "ui_group",
+        "name": "Chart",
+        "tab": "17d09b07.741a55",
+        "order": 1,
+        "disp": true,
+        "width": 15,
+        "collapse": false
+    },
+    {
+        "id": "343d55e47c42eb61",
+        "type": "probe",
+        "probeid": "B55B5A1A000000009DE1EE01",
+        "probename": "ST-Link v2 B55B5A1A000000009DE1EE01",
+        "protocol": "SWD",
+        "frequency": "1.8 MHz - Default",
+        "probeproperty": "{\"SWD\":[\"4.6 MHz\",\"1.8 MHz - Default\",\"950 kHz\",\"400 kHz\",\"150 kHz\"],\"JTAG\":[\"18 MHz\",\"9 MHz\",\"4.5 MHz\",\"2.25 MHz\",\"1.12 MHz - Default\",\"560 kHz\",\"280 kHz\",\"140 kHz\"]}",
+        "probeversion": "ST Link firmware version V2.J45",
+        "connectionType": "p2p",
+        "nickname": ""
+    },
+    {
+        "id": "844c546a938155de",
+        "type": "probe",
+        "probeid": "B55B5A1A000000009DE1EE01",
+        "probename": "ST-Link v2 B55B5A1A000000009DE1EE01",
+        "protocol": "SWD",
+        "frequency": "1.8 MHz - Default",
+        "probeproperty": "{\"SWD\":[\"4.6 MHz\",\"1.8 MHz - Default\",\"950 kHz\",\"400 kHz\",\"150 kHz\"],\"JTAG\":[\"18 MHz\",\"9 MHz\",\"4.5 MHz\",\"2.25 MHz\",\"1.12 MHz - Default\",\"560 kHz\",\"280 kHz\",\"140 kHz\"]}",
+        "probeversion": "ST Link firmware version V2.J45",
+        "connectionType": "p2p",
+        "nickname": ""
+    },
+    {
+        "id": "691c2b5040b7f848",
+        "type": "exe-config",
+        "name": "led",
+        "exefile": "C:\\Users\\ruseler\\Documents\\VScode\\ELT73A-LAB06\\LED-IoT\\build\\Debug\\LED-IoT.elf",
+        "exefolder": "C:/Users/ruseler/Documents/VScode/ELT73A-LAB06/LED-IoT/build/Debug",
+        "exevariablelist": [
+            {
+                "address": "0x0800173c",
+                "name": "AHBPrescTable[0]",
+                "type": 1
+            },
+            {
+                "address": "0x20000028",
+                "name": "BLUELED",
+                "type": 1,
+                "checked": true
+            },
+            {
+                "address": "0x20000008",
+                "name": "SystemCoreClock",
+                "type": 5
+            },
+            {
+                "address": "0x2000002c",
+                "name": "uwTick",
+                "type": 5
+            },
+            {
+                "address": "0x20000004",
+                "name": "uwTickFreq",
+                "type": 2
+            },
+            {
+                "address": "0x20000000",
+                "name": "uwTickPrio",
+                "type": 5
+            }
+        ],
+        "expand": false,
+        "filename": "LED-IoT.elf",
+        "exeModifiedTime": 1732581632979,
+        "configLastUpdate": 1732583201067
+    },
+    {
+        "id": "2b8504b256515eae",
+        "type": "mqtt-broker",
+        "name": "lab6",
+        "broker": "mqtt.adrianoruseler.com",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "5",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "17d09b07.741a55",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]
