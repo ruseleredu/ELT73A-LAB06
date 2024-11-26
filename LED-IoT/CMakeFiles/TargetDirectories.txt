@@ -1,0 +1,5 @@
+C:/Users/ruseler/Documents/VScode/ELT73A-LAB06/LED-IoT/CMakeFiles/LED-IoT.dir
+C:/Users/ruseler/Documents/VScode/ELT73A-LAB06/LED-IoT/CMakeFiles/edit_cache.dir
+C:/Users/ruseler/Documents/VScode/ELT73A-LAB06/LED-IoT/CMakeFiles/rebuild_cache.dir
+C:/Users/ruseler/Documents/VScode/ELT73A-LAB06/LED-IoT/cmake/stm32cubemx/CMakeFiles/edit_cache.dir
+C:/Users/ruseler/Documents/VScode/ELT73A-LAB06/LED-IoT/cmake/stm32cubemx/CMakeFiles/rebuild_cache.dir
